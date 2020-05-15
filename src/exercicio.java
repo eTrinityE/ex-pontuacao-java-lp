@@ -6,7 +6,7 @@ public class exercicio {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int qtdcompra, atrasopgt, scorevdc, scoreina, scorepag;
+		int qtdcompra, atrasopgt, scorevdc, scoreina, scorepag, score;
 		double ticketm, valortotalgasto;
 		char metodopgt;
 		
@@ -65,6 +65,16 @@ public class exercicio {
 		}
 		System.out.printf("Score de forma de pagamento = %d pontos %n", scorepag);
 		
+		//Classificacao final
+		score = scorepag + scoreina + scorevdc;
+		System.out.printf("%n");
+		if (score <= 25) {
+			System.out.println("Classificacão final = CLIENTE BRONZE");
+		}else if(score > 25 && score <= 75) {
+			System.out.println("Classificacão final = CLIENTE PRATA");
+		}else {
+			System.out.println("Classificacão final = CLIENTE OURO");
+		}
 		
 		sc.close();
 	}
