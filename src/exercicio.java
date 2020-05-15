@@ -6,8 +6,8 @@ public class exercicio {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int qtdcompra, atrasopgt;
-		double ticketm;
+		int qtdcompra, atrasopgt, scorevdc;
+		double ticketm, valortotalgasto;
 		char metodopgt;
 		
 		//Cabecalho
@@ -30,6 +30,23 @@ public class exercicio {
 		
 		System.out.println("A maioria das compras foi em dinheiro, cartão ou boleto (D/C/B)?");
 		metodopgt = sc.next().charAt(0);
+		
+		//Score de volume de compras
+		valortotalgasto = qtdcompra * ticketm;
+		
+		if (qtdcompra == 0) {
+			scorevdc = 0;
+		} else if(qtdcompra > 0 && qtdcompra <= 2 && valortotalgasto < 3000) {
+			scorevdc = 20; 
+		} else if(qtdcompra > 2 && valortotalgasto < 3000) {
+			scorevdc = 40;
+		} else {
+			scorevdc = 60;
+		}
+		
+		System.out.printf("Score de volume de compras : %d pontos %n", scorevdc);
+		
+		
 		
 		sc.close();
 	}
