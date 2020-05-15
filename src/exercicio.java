@@ -6,7 +6,7 @@ public class exercicio {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int qtdcompra, atrasopgt, scorevdc;
+		int qtdcompra, atrasopgt, scorevdc, scoreina, scorepag;
 		double ticketm, valortotalgasto;
 		char metodopgt;
 		
@@ -46,6 +46,24 @@ public class exercicio {
 		
 		System.out.printf("Score de volume de compras : %d pontos %n", scorevdc);
 		
+		//Scores de inadimplencia e pagamento
+		
+		if (atrasopgt > 1 || qtdcompra == 0) {
+			scoreina = 0;
+		} else if (atrasopgt == 1 && qtdcompra >= 0) {
+			scoreina = 15;
+		}else {
+			scoreina = 30;
+		}
+		System.out.printf("%n");
+		System.out.printf("Score de inadimplência = %d pontos %n", scoreina);
+		
+		if (metodopgt == 'd' || metodopgt == 'D') {
+			scorepag = 5;
+		}else {
+			scorepag = 10;
+		}
+		System.out.printf("Score de forma de pagamento = %d pontos %n", scorepag);
 		
 		
 		sc.close();
