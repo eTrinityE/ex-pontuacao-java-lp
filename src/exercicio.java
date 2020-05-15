@@ -6,8 +6,9 @@ public class exercicio {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int qtdcompra;
+		int qtdcompra, atrasopgt;
 		double ticketm;
+		char metodopgt;
 		
 		//Cabecalho
 		System.out.println("SISTEMA DE PERFIL DE CLIENTE");
@@ -21,6 +22,14 @@ public class exercicio {
 		
 		System.out.println("Qual foi o ticket médio?");
 		ticketm = sc.nextDouble();
+		
+		//Leitura dos outros dados
+		System.out.printf("%n");
+		System.out.println("Quantas vezes o cliente atrasou pagamento?");
+		atrasopgt = sc.nextInt();
+		
+		System.out.println("A maioria das compras foi em dinheiro, cartão ou boleto (D/C/B)?");
+		metodopgt = sc.next().charAt(0);
 		
 		sc.close();
 	}
